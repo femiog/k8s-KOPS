@@ -81,8 +81,9 @@ You Created. --> Save.
 	
 	# Give Unique Name And S3 Bucket which you created.
 	export NAME=class.k8s.local
-	export KOPS_STATE_STORE=s3://class29v
- 
+	export KOPS_STATE_STORE=s3://class2929
+	
+	#refresh the file on the CLI with the command below
     source .bashrc
 	
 # 7) Create sshkeys before creating cluster
@@ -95,10 +96,14 @@ You Created. --> Save.
 	kops create cluster --zones us-east-2c --networking weave --master-size t2.medium --master-count 1 --node-size t2.medium --node-count=2 ${NAME}
 	
 	kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
+	
+# The command above will copy the shh key into our KOPS. This will allow us access KOPS via ssh.
 
 # 9) Create kubernetes cluser
 
 	 kops update cluster ${NAME} --yes
+	 
+	 #The command above will create our cluster that will consist of a master node, 2 worker nodes and a VPC in the specified region.
 
 # 10) Validate your cluster(KOPS will take some time to create cluster ,Execute below commond after 3 or 4 mins)
 
@@ -112,10 +117,13 @@ You Created. --> Save.
  * read about installing addons at: https://kops.sigs.k8s.io/operations/addons.
 
 
-# 11) connect to the master node
-    sh -i ~/.ssh/id_rsa ubuntu@ipAddress
-    ssh -i ~/.ssh/id_rsa ubuntu@18.222.139.125
-    ssh -i ~/.ssh/id_rsa ubuntu@172.20.58.124
+# 11) connect to the master node (inside of the KOPS Cluster?)
+    
+    ssh -i ~/.ssh/id_rsa ubuntu@18.223.115.43
+    
+    
+    #Please note that in the above, we are using the masters node current Public IP address. Public IP address because the master node is in a different vpc than the KOPS cluster. Hence, needs Public IP to establish connection. 
+    
 # 11) To list nodes
 
 	  kubectl get nodes 
