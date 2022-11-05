@@ -99,7 +99,7 @@ You Created. --> Save.
 	
 # The command above will copy the shh key into our KOPS. This will allow us access KOPS via ssh.
 
-# 9) Create kubernetes cluser
+# 9) Create kubernetes cluster
 
 	 kops update cluster ${NAME} --yes
 	 
@@ -117,12 +117,14 @@ You Created. --> Save.
  * read about installing addons at: https://kops.sigs.k8s.io/operations/addons.
 
 
-# 11) connect to the master node (inside of the KOPS Cluster?)
+# 11) connect to the master node (via the KOPS server)
     
     ssh -i ~/.ssh/id_rsa ubuntu@18.223.115.43
     
+    #ubuntu@kops:~$ ssh -i ~/.ssh/id_rsa ubuntu@ 172.20.55.224 (master node public IP)
     
-    #Please note that in the above, we are using the masters node current Public IP address. Public IP address because the master node is in a different vpc than the KOPS cluster. Hence, needs Public IP to establish connection. 
+    
+    #Please note that in the above, we are using the masters node current Public IP address. Public IP address because the master node is in a different vpc than  KOPS. Hence, needs Public IP to establish connection. 
     
 # 11) To list nodes
 
