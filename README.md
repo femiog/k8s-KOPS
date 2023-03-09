@@ -75,9 +75,7 @@ You Created. --> Save.
     ex: s3://class29v
     #or use the command below to expose the variable
     export MY_VARIABLE=s3://class29v2
-
-     
-	Expose environment variable:
+Expose environment variable:
 
     # Add env variables in bashrc
     vi .bashrc
