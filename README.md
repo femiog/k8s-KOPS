@@ -82,7 +82,7 @@ Expose environment variable:
 	
 	# Give Unique Name And S3 Bucket which you created.
 	export NAME=class.k8s.local
-	export KOPS_STATE_STORE=s3://class2929
+	export KOPS_STATE_STORE=s3://class29v2
 	
 	#refresh the file on the CLI with the command below
     source .bashrc
