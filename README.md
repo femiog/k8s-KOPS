@@ -69,10 +69,13 @@ You Created. --> Save.
 # 6) create an S3 bucket
 # Execute the commands below in your KOPS control Server. use unique s3 bucket name. If you get bucket name exists error.
 
-	aws s3 mb s3://class29v
+	aws s3 mb s3://class29v2
 	aws s3 ls
 	
     ex: s3://class29v
+    #or use the command below to expose the variable
+    export MY_VARIABLE=s3://class29v2
+
      
 	Expose environment variable:
 
