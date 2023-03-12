@@ -137,7 +137,10 @@ Expose environment variable:
  
 # 12) To Delete Cluster
 
-   kops delete cluster --name=${NAME} --state=${KOPS_STATE_STORE} --yes  
+   kops delete cluster --name=${NAME} --state=${KOPS_STATE_STORE} --yes  #See command below
+   
+    kops delete cluster --name class.k8s.local --state=s3://bucketog22 --yes
+
    
 ====================================================================================================
 
